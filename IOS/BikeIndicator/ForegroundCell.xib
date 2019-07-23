@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForegroundCell" id="Yvq-rv-N9K" customClass="ForegroundCell" customModule="TayarIndicator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="900" height="62"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="900" height="62"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrolling_foreground" translatesAutoresizingMaskIntoConstraints="NO" id="WHy-EP-cHk">
+                        <rect key="frame" x="0.0" y="0.0" width="900" height="62"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WHy-EP-cHk" secondAttribute="trailing" id="JIO-ID-dhJ"/>
+                <constraint firstAttribute="bottom" secondItem="WHy-EP-cHk" secondAttribute="bottom" id="a9A-i4-q1n"/>
+                <constraint firstItem="WHy-EP-cHk" firstAttribute="leading" secondItem="Yvq-rv-N9K" secondAttribute="leading" id="aSK-oD-FG8"/>
+                <constraint firstItem="WHy-EP-cHk" firstAttribute="top" secondItem="Yvq-rv-N9K" secondAttribute="top" id="jHg-FQ-Bw3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="0Yw-uF-MHU"/>
+            <size key="customSize" width="900" height="62"/>
+            <point key="canvasLocation" x="662.31884057971024" y="31.473214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="scrolling_foreground" width="1500" height="45"/>
+    </resources>
+</document>
