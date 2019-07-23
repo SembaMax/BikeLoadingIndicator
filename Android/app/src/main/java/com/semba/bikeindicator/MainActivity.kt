@@ -19,11 +19,22 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         startLoading(true)
+
+        main_layout?.postDelayed({
+            stopAnimation(true)
+        }, 5000)
     }
 
     private fun startLoading(playMusic: Boolean)
     {
-        runBikeAnimations()
+        runBikeEnteranceAnimations()
+        if (playMusic)
+            playBikeSound()
+    }
+
+    private fun stopAnimation(playMusic: Boolean)
+    {
+        runBikeExitAnimations()
         if (playMusic)
             playBikeSound()
     }
@@ -36,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun runBikeAnimations() {
+    private fun runBikeEnteranceAnimations() {
 
         val animSet = AnimationSet(true)
         animSet.fillAfter = true
@@ -47,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         rot.repeatCount = 1
         rot.repeatMode = Animation.REVERSE
 
-        val trans = TranslateAnimation(-800f, 0f, 0f, 0f)
+        val trans = TranslateAnimation(-900f, 0f, 0f, 0f)
         trans.duration = 1500
 
         bikeAnimation = AnimationUtils.loadAnimation(this, R.anim.tayar_bike_animation)
@@ -60,4 +71,27 @@ class MainActivity : AppCompatActivity() {
         bike_imageView?.startAnimation(animSet)
     }
 
+    private fun runBikeExitAnimations() {
+
+        val animSet = AnimationSet(true)
+        animSet.fillAfter = true
+        animSet.interpolator = LinearInterpolator()
+
+        val rot = RotateAnimation(0f,-30f)
+        rot.duration = 650
+        rot.repeatCount = 1
+        rot.repeatMode = Animation.REVERSE
+
+        val trans = TranslateAnimation(0f, 1000f, 0f, 0f)
+        trans.duration = 1500
+
+        bikeAnimation = AnimationUtils.loadAnimation(this, R.anim.tayar_bike_animation)
+        bikeAnimation?.repeatCount = Animation.INFINITE
+        bikeAnimation?.repeatMode = Animation.REVERSE
+
+        animSet.addAnimation(bikeAnimation)
+        animSet.addAnimation(rot)
+        animSet.addAnimation(trans)
+        bike_imageView?.startAnimation(animSet)
+    }
 }
